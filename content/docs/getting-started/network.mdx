@@ -26,9 +26,10 @@ Robinhood Chain is an [Arbitrum Orbit](https://arbitrum.io/orbit) L2 with full E
 | Gas token    | ETH (18 decimals)                            |
 
 <Callout type="info">
-  The deployed app is configured for mainnet only. To use it against testnet,
-  self-host and override the RPC as shown below (and point your wallet at chain
-  ID 46630).
+  The app is configured for mainnet only. Overriding the RPC URL does not
+  switch the app to testnet: the chain ID, explorer and wallet network remain
+  configured for mainnet. Testnet use requires updating those settings together;
+  changing the RPC URL and your wallet's selected network is not sufficient.
 </Callout>
 
 ## Explorer
@@ -41,7 +42,7 @@ Multicall3 is deployed at the canonical address `0xcA11bde05977b3631167028862bE2
 
 ## Overriding the RPC
 
-The public RPC is rate-limited. If you are self-hosting and want to use a dedicated provider, set the `NEXT_PUBLIC_RPC_URL` environment variable to your endpoint:
+The public RPC is rate-limited. If you are self-hosting and want to use a dedicated provider, set the `NEXT_PUBLIC_RPC_URL` environment variable to a Robinhood Chain **mainnet** endpoint:
 
 ```bash
 NEXT_PUBLIC_RPC_URL=https://your-provider.example/robinhood-chain
